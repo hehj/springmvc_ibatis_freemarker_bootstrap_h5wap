@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itelephant.h5wap.dao.ArticleMapper">
+	<resultMap id="BaseResultMap" type="com.itelephant.h5wap.entity.Article">
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="post_author" property="postAuthor" jdbcType="BIGINT" />
+		<result column="post_keywords" property="postKeywords" jdbcType="VARCHAR" />
+		<result column="post_title" property="postTitle" jdbcType="VARCHAR" />
+		<result column="post_content" property="postContent" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, post_author, post_keywords, post_title, post_content
+	</sql>
+
+	<select id="whichOneByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Long">
+		select a.* from sp_posts a where a.id = #{id,jdbcType=BIGINT}
+	</select>
+	
+	<select id="listAll" resultMap="BaseResultMap">
+		select a.* from sp_posts a
+	</select>
+</mapper>
