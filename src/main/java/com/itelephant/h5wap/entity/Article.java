@@ -6,6 +6,9 @@ public class Article {
 	private String postKeywords;
 	private String postTitle;
 	private String postContent;
+	private String postSource;
+	private Long postHits;
+	private Long postLike;
 
 	public Long getId() {
 		return id;
@@ -45,6 +48,30 @@ public class Article {
 
 	public void setPostContent(String postContent) {
 		this.postContent = postContent;
+	}
+
+	public String getPostSource() {
+		return postSource;
+	}
+
+	public void setPostSource(String postSource) {
+		this.postSource = postSource;
+	}
+
+	public Long getPostHits() {
+		return postHits;
+	}
+
+	public void setPostHits(Long postHits) {
+		this.postHits = postHits;
+	}
+
+	public Long getPostLike() {
+		return postLike;
+	}
+
+	public void setPostLike(Long postLike) {
+		this.postLike = postLike;
 	}
 
 }

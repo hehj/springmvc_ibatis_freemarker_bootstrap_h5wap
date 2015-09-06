@@ -40,7 +40,7 @@ public class BarCode2DServlet extends HttpServlet {
 		if (keycode != null && !"".equals(keycode)) {
 			ServletOutputStream stream = null;
 			try {
-				int size = 280;
+				int size = 360;
 				String msize = req.getParameter(SIZE);
 				if (msize != null && !"".equals(msize.trim())) {
 					try {
@@ -56,11 +56,9 @@ public class BarCode2DServlet extends HttpServlet {
 				String filePath = this.getServletConfig().getServletContext()
 						.getRealPath("/");
 				StringBuffer imagePath = new StringBuffer(filePath);
-				//imagePath.append("/statics/themes/icons/logo64x64.png");
-				//imagePath.append("/statics/themes/icons/logo28x28.png");
-				imagePath.append("/resources/image/logo34x34.png");
+				imagePath.append("/resources/image/favicon.png");
 
-				int imageXy = (size - 34) / 2;
+				int imageXy = (size - 64) / 2;
 				MatrixToImageWriter.writeToStream(m, IMAGETYPE, stream,
 						imagePath.toString(), imageXy);
 			} catch (WriterException e) {

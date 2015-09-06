@@ -61,4 +61,14 @@
 		<servlet-name>qrCode</servlet-name>
 		<url-pattern>/qrCode</url-pattern>
 	</servlet-mapping>
+	
+	<!-- FITER -->
+	<filter>
+		<filter-name>weixinFilter</filter-name>
+		<filter-class>com.itelephant.h5wap.action.WeixinFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>weixinFilter</filter-name>
+		<url-pattern>/article/*</url-pattern>
+	</filter-mapping>
 </web-app>

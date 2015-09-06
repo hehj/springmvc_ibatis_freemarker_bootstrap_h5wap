@@ -14,7 +14,9 @@ public class ArticleServiceImpl implements ArticleService {
 	private ArticleMapper articleDao;
 	
 	public Article whichOne(Long id) {
-		return articleDao.whichOneByPrimaryKey(id);
+		Article article =  articleDao.whichOneByPrimaryKey(id);
+		article.setPostHits(article.getPostHits()+1);
+		articleDao.updateByPrimaryKey(article);
+		return article;
 	}
-
 }

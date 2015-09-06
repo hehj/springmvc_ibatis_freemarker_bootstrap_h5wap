@@ -19,6 +19,9 @@ public class ArticleController {
 			Article article = articleService.whichOne(id);
 			model.addAttribute("title", article.getPostTitle());
 			model.addAttribute("content", article.getPostContent());
+			model.addAttribute("source", article.getPostSource());
+			model.addAttribute("hits", article.getPostHits());
+			model.addAttribute("like", article.getPostLike());
 			return "/article/detail";
 		}
 }

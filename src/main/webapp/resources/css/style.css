@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-body{padding-top: 70px;}
+body{padding-top: 0px;}
 body.body-white{ background: #fff;}
 .navbar-fixed-top, .navbar-fixed-bottom {
 position: fixed;
@@ -22,7 +22,7 @@ margin-left: 0px;
 }
 /*tc widget*/
 .tc-main{
-	margin-top: 20px;
+	margin-top: 0px;
 }
 /*tc-box*/
 .tc-box{

@@ -7,17 +7,26 @@
 		<result column="post_keywords" property="postKeywords" jdbcType="VARCHAR" />
 		<result column="post_title" property="postTitle" jdbcType="VARCHAR" />
 		<result column="post_content" property="postContent" jdbcType="VARCHAR" />
+		<result column="post_source" property="postSource" jdbcType="VARCHAR" />
+		<result column="post_hits" property="postHits" jdbcType="BIGINT" />
+		<result column="post_like" property="postLike" jdbcType="BIGINT" />
 	</resultMap>
-	<sql id="Base_Column_List">
-		id, post_author, post_keywords, post_title, post_content
-	</sql>
-
+	
 	<select id="whichOneByPrimaryKey" resultMap="BaseResultMap"
 		parameterType="java.lang.Long">
 		select a.* from sp_posts a where a.id = #{id,jdbcType=BIGINT}
 	</select>
 	
-	<select id="listAll" resultMap="BaseResultMap">
-		select a.* from sp_posts a
-	</select>
+	<update id="updateByPrimaryKey" parameterType="com.itelephant.h5wap.entity.Article">
+		update sp_posts
+		<set>
+			<if test="postHits != null">
+				post_hits = #{postHits,jdbcType=BIGINT},
+			</if>
+			<if test="postLike != null">
+				post_like = #{postLike,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
 </mapper>
