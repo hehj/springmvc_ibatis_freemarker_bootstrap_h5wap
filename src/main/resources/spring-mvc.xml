@@ -16,6 +16,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 	<mvc:resources mapping="/image/**" location="/resources/image/" />
 	<mvc:resources mapping="/script/**" location="/resources/script/" />
 	<mvc:resources mapping="/simpleboot/**" location="/resources/simpleboot/" />
+	<mvc:resources mapping="/static/**" location="/resources/bluestar/" />
 
 	<mvc:annotation-driven>
 		<mvc:message-converters>

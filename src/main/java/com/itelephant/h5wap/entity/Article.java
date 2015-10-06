@@ -9,6 +9,7 @@ public class Article {
 	private String postSource;
 	private Long postHits;
 	private Long postLike;
+	private String postDate;
 
 	public Long getId() {
 		return id;
@@ -72,6 +73,14 @@ public class Article {
 
 	public void setPostLike(Long postLike) {
 		this.postLike = postLike;
+	}
+
+	public String getPostDate() {
+		return postDate;
+	}
+
+	public void setPostDate(String postDate) {
+		this.postDate = postDate;
 	}
 
 }

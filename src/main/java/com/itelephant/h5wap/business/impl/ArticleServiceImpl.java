@@ -1,5 +1,7 @@
 package com.itelephant.h5wap.business.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +20,9 @@ public class ArticleServiceImpl implements ArticleService {
 		article.setPostHits(article.getPostHits()+1);
 		articleDao.updateByPrimaryKey(article);
 		return article;
+	}
+
+	public List<Article> listByKey(List<Long> key) {
+		return articleDao.listByKey(key);
 	}
 }

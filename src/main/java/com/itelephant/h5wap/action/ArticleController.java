@@ -22,6 +22,7 @@ public class ArticleController {
 			model.addAttribute("source", article.getPostSource());
 			model.addAttribute("hits", article.getPostHits());
 			model.addAttribute("like", article.getPostLike());
+			model.addAttribute("time", article.getPostDate().substring(0, 10));
 			return "/article/detail";
 		}
 }
